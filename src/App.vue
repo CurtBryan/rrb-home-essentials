@@ -1,32 +1,77 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div class="db-cont">
+      <div id="nav">
+        <Navigation />
+      </div>
+      <router-view />
     </div>
-    <router-view />
   </div>
 </template>
 
+<script>
+/* colors: 
+green: #90957A
+tan: #F89F7B
+*/
+
+import Navigation from "./components/Navigation";
+export default {
+  name: "app",
+  components: {
+    Navigation
+  }
+};
+</script>
+
 <style lang="scss">
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.db-cont {
+  width: 100%;
+  max-width: 1200px;
+}
+html {
+  box-sizing: border-box;
+  font-size: 16px;
 }
 
-#nav {
-  padding: 30px;
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 </style>
